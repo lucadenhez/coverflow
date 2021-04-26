@@ -31,6 +31,7 @@ if ((bearer == null) || (token == null)) {
 
 var headers = { "authorization" : "Bearer " + bearer, "media-user-token" : token };
 var query = "?include[library-albums]=artists&include[library-artists]=catalog&fields[artists]=url&fields%5Balbums%5D=artistName%2CartistUrl%2Cartwork%2CcontentRating%2CeditorialArtwork%2CeditorialNotes%2Cname%2CplayParams%2CreleaseDate%2Curl&includeOnly=catalog%2Cartists&limit=25";
+var newQuery = "https://amp-api.music.apple.com/v1/me/library/recently-added?l=en-us&platform=web&include[library-albums]=artists&include[library-artists]=catalog&fields[artists]=url&fields%5Balbums%5D=artistName%2CartistUrl%2Cartwork%2CcontentRating%2CeditorialArtwork%2Cname%2CplayParams%2CreleaseDate%2Curl&includeOnly=catalog%2Cartists&limit=25";
 
 String.prototype.formatUnicorn = String.prototype.formatUnicorn ||
 function () {
@@ -72,7 +73,8 @@ function getCovers() {
       window.location.replace("login.html");
     }
 };
-xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://amp-api.music.apple.com/v1/me/library/recently-added" + query, true);
+//xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://amp-api.music.apple.com/v1/me/library/recently-added" + query, true);
+  xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://amp-api.music.apple.com/v1/me/library/recently-added" + newQuery, true);
 
 for(let key in headers) {
   xhr.setRequestHeader(key, headers[key]) 
