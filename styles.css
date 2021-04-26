@@ -32,6 +32,7 @@ body {
 */
 
 #gallery img {
+  cursor: pointer;
   -webkit-box-reflect:
     below
     0
