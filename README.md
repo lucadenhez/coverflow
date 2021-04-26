@@ -12,7 +12,7 @@ The actual _CSS_ and _JavaScript_ code to create the beautiful cover flow was cr
 
 # Instructions
 
-1. Go to [https://music.apple.com](https://apple.music.com)
+1. Go to [https://apple.music.com](https://apple.music.com)
 2. Log in.
 3. Open Chrome DevTools with **Ctrl + Shift + i** on Windows or **Cmd + Alt + i** on Mac.
 4. Go to the network tab in the DevTools, then go to your recentley added on Apple Music.
