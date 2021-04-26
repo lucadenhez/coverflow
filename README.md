@@ -15,7 +15,7 @@ The actual _CSS_ and _JavaScript_ code to create the beautiful cover flow was cr
 1. Go to [https://apple.music.com](https://apple.music.com)
 2. Log in.
 3. Open Chrome DevTools with **Ctrl + Shift + i** on Windows or **Cmd + Alt + i** on Mac.
-4. Go to the network tab in the DevTools, then go to your recentley added on Apple Music.
+4. Go to the network tab in the DevTools, then go to your recently added on Apple Music.
 5. Once you see an entry in the Network Inspector that looks something along the lines as **recently-added?l=en-us&platform=web&includ...**, choose the second one, (A **GET** request, not an options) then pause the recording.
 6. Click on the entry, go to request headers, then copy and write down the _authorization_, copy everything **after the 'Bearer ',** no trailing whitespaces. And also copy the _media-user-token_.
 7. Now head over to my website [https://lucadenhez.github.io/coverflow](https://lucadenhez.github.io/coverflow), and enter the information.
