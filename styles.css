@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: "Georgia", serif;
+}
+
+
+/*
+  The gallery container. 
+   - Fills the browser window.
+   - Renders its contents in 3D.
+   - Has a gradient mask to fade out slides at the left and right edges.
+*/
+
+#gallery {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-perspective: 600px;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0,0,0,.2)), color-stop(.1, rgba(0,0,0,1)), color-stop(.9, rgba(0,0,0,1)), color-stop(1, rgba(0,0,0,.2)) );
+}
+
+
+/*
+  Images within the gallery.
+   - Add a reflection below the image.
+   - Fade the reflection out gradually towards the bottom.
+   - Make the image resize with its containing div.
+   - Hide the image initially.
+*/
+
+#gallery img {
+  -webkit-box-reflect:
+    below
+    0
+    -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, rgba(255, 255, 255, 0)),
+      color-stop(.5, rgba(255, 255, 255, .3)),
+      color-stop(1, rgba(255, 255, 255, .3))
+    );
+
+    max-width: inherit;
+    max-height: inherit;
+    display: none;
+}
+
+
+/*
+  Divs wrapped around the gallery images and reflections.
+   - Add some bottom padding to allow for the reflection.
+   - Position the div below the gallery bottom so the reflection is partially hidden.
+   - Give the div a black background to prevent other reflections leaking through.
+*/
+
+#gallery div {
+  position: absolute;
+  padding-bottom: 400px;
+  bottom: -300px;
+  background: #000;
+}
+
+/*
+  The current slide caption.
+   - Position it below the slide.
+   - Centre it horizontally.
+   - Give it a font that's remarkably similar to the real thing. :)
+*/
+
+#caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 75px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/*
+  Loading text.
+   - Position in the centre of the gallery container
+   - Hide by default
+*/
+
+#loading {
+  position: absolute;
+  z-index: 1;
+  bottom: 50%;
+  width: 100%;
+  color: #ffc;
+  text-align: center;
+  font-family: "Georgia", serif;
+  font-size: 36px;
+  letter-spacing: .1em;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}

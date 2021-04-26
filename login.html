@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="js.cookie-2.2.1.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <h1>Login with Apple Music</h1>
+            <input type="password" id="bearerToken" placeholder="Bearer Token">
+            <input type="password" id="mediaToken" placeholder="Media Token">
+            <button id="submit" onclick="setInfo();">Submit</button>
+        </div>
+        
+        <script>
+            function setInfo() {
+                var bearerToken = document.getElementById("bearerToken").value;
+                var mediaToken = document.getElementById("mediaToken").value;
+
+                if ((bearerToken.length > 0) && (mediaToken.length > 0)) {
+                    Cookies.set('bearerToken', bearerToken, { expires: 365 });
+                    Cookies.set('mediaToken', mediaToken, { expires: 365 });
+                    window.location.replace("index.html");
+                }
+            }
+        </script>
+    
+        <style>
+            @font-face {
+                font-family: "San Francisco";
+                font-weight: 400;
+                src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+            }
+            body {
+                background-color: #0a0a0a;
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            h1 {
+                color: white;
+                font-family: 'San Francisco';
+                font-size: 300%;
+                margin-top: 150px;
+                
+            }
+
+            input {
+                padding: 10px 10px;
+                border: none;
+                border-radius: 5px;
+                position: absolute;
+            }
+
+            #bearerToken {
+                margin-top: 150px;
+            }
+
+            #mediaToken {
+                margin-top: 193px;
+            }
+
+            #submit {
+                font-family: 'San Francisco';
+                padding: 7px 50px;
+                border: none;
+                border-radius: 5px;
+                position: absolute;
+                margin-top: 470px;
+                transition: 0.3s;
+            }
+
+            #submit:hover {
+                background-color: #171717;
+                color: white;
+            }
+        </style>
+    </body>
+</html>
