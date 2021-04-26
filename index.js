@@ -73,9 +73,9 @@ function getCovers() {
       window.location.replace("login.html");
     }
 };
-xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://amp-api.music.apple.com/v1/me/library/recently-added" + query, true);
-//xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://amp-api.music.apple.com/v1/me/library/recently-added" + altQuery, true);
-
+xhr.open("GET", "https://cors-app-ld.herokuapp.com/https://amp-api.music.apple.com/v1/me/library/recently-added" + query, true);
+//xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://amp-api.music.apple.com/v1/me/library/recently-added" + query, true);
+  
 for(let key in headers) {
   xhr.setRequestHeader(key, headers[key]) 
 }
