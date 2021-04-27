@@ -86,8 +86,8 @@ xhr.send();
 // Display the loading message after a short delay
 $( function() {
 
-  var userAgent = navigator.userAgent.toString().toLowerCase();
-  if (userAgent.indexOf('safari') == -1) {
+  var ua = navigator.userAgent.toLowerCase(); 
+  if ((ua.indexOf('safari') == -1) && (ua.indexOf('chrome') == -1)) {
     alert("This extension is made to work on a Chromium or Safari browser, so the extension may not work properly.")
   }
 
@@ -199,7 +199,6 @@ function displayGallery() {
 
   $('#gallery div').each( function(index) {
     globalIndex = index;
-    console.log(globalIndex);
     var div = $(this);
     
     // Resize each slide if necessary (e.g. if the window height has changed) 
