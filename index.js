@@ -87,7 +87,7 @@ xhr.send();
 $( function() {
 
   var userAgent = navigator.userAgent.toString().toLowerCase();
-  if ((userAgent.indexOf('chrome') == -1) || (userAgent.indexOf('safari') == -1)) {
+  if (userAgent.indexOf('safari') == -1) {
     alert("This extension is made to work on a Chromium or Safari browser, so the extension may not work properly.")
   }
 
